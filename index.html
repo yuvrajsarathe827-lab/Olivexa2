@@ -3,303 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CareConnect | Healthcare Made Easy</title>
+<title>CareConnect | Healthcare at Your Fingertips</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:#f5f7fa;
-color:#333;
+background:#f4f8fc;
+color:#222;
 }
 
 header{
-background:#0066ff;
-color:white;
-padding:20px;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
+padding:18px 8%;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+z-index:1000;
 }
 
 .logo{
-font-size:40px;
-font-weight:bold;
+font-size:30px;
+font-weight:700;
+color:#0d6efd;
 }
 
 nav a{
-color:white;
 text-decoration:none;
-margin:10px;
-font-weight:bold;
+color:#222;
+margin-left:30px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#0d6efd;
 }
 
 .hero{
-background:linear-gradient(to right,#0066ff,#66b3ff);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8%;
+background:linear-gradient(135deg,#0d6efd,#00b4ff);
 color:white;
-text-align:center;
-padding:100px 20px;
 }
 
-.hero h1{
-font-size:60px;
+.hero-text{
+max-width:650px;
+}
+
+.hero-text h1{
+font-size:70px;
+line-height:1.2;
 margin-bottom:20px;
 }
 
-.hero p{
-font-size:28px;
-margin-bottom:30px;
-}
-
-.btn{
-background:white;
-color:#0066ff;
-padding:15px 40px;
-border:none;
-border-radius:15px;
-font-size:24px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.section{
-padding:80px 20px;
-text-align:center;
-}
-
-.section-title{
-font-size:50px;
+.hero-text p{
+font-size:20px;
+line-height:1.8;
 margin-bottom:40px;
 }
 
-.cards{
+.buttons{
 display:flex;
-justify-content:center;
-flex-wrap:wrap;
 gap:20px;
 }
 
-.card{
+.btn1{
 background:white;
-padding:25px;
-width:300px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100px;
-border-radius:50%;
-margin-bottom:15px;
-}
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,select{
-padding:15px;
-font-size:18px;
-border:1px solid #ccc;
-border-radius:10px;
-}
-
-button{
-background:#0066ff;
-color:white;
-padding:15px;
+color:#0d6efd;
+padding:16px 35px;
 border:none;
-border-radius:10px;
+border-radius:50px;
 font-size:18px;
+font-weight:600;
 cursor:pointer;
+transition:.4s;
 }
 
-footer{
-background:#111;
+.btn1:hover{
+transform:translateY(-5px);
+}
+
+.btn2{
+background:transparent;
+border:2px solid white;
 color:white;
-text-align:center;
-padding:20px;
+padding:16px 35px;
+border-radius:50px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
 }
 
-@media(max-width:768px){
-.hero h1{
-font-size:40px;
+.btn2:hover{
+background:white;
+color:#0d6efd;
 }
-.hero p{
-font-size:22px;
+
+.hero-image img{
+width:500px;
 }
-.section-title{
-font-size:40px;
+
+.stats{
+padding:100px 8%;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+background:white;
 }
+
+.stat-card{
+width:250px;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+transition:.4s;
 }
+
+.stat-card:hover{
+transform:translateY(-10px);
+}
+
+.stat-card h1{
+font-size:45px;
+color:#0d6efd;
+margin-bottom:10px;
+}
+
+.stat-card p{
+font-size:18px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding-top:150px;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+.hero-image img{
+width:320px;
+margin-top:40px;
+}
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+margin:0 10px;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">🏥 CareConnect</div>
+
+<div class="logo">
+🏥 CareConnect
+</div>
 
 <nav>
-<a href="#about">About</a>
-<a href="#doctors">Doctors</a>
-<a href="#appointment">Appointment</a>
-<a href="#emergency">Emergency</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
+
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Partners</a>
+<a href="#">Appointments</a>
+<a href="#">Contact</a>
+
 </nav>
+
 </header>
 
+
 <section class="hero">
-<h1>Healthcare At Your Fingertips</h1>
-<p>Find doctors, hospitals and book appointments easily.</p>
-<button class="btn">Book Appointment</button>
-</section>
 
-<section class="section" id="about">
-<h2 class="section-title">About CareConnect</h2>
+<div class="hero-text">
+
+<h1>
+Healthcare<br>
+at Your Fingertips
+</h1>
+
 <p>
-CareConnect is a healthcare startup idea that helps patients connect with doctors online and book appointments quickly.
+Connecting Patients, Doctors, Hospitals and Labs through one smart healthcare platform.
 </p>
+
+<div class="buttons">
+
+<button class="btn1">
+Book Appointment
+</button>
+
+<button class="btn2">
+Partner With Us
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+
+</div>
+
 </section>
 
-<section class="section" id="doctors">
-<h2 class="section-title">Our Doctors</h2>
 
-<div class="cards">
+<section class="stats">
 
-<div class="card">
-<h3>Dr. Sharma</h3>
-<p>Cardiologist</p>
-<p>⭐⭐⭐⭐⭐</p>
-<p>10 Years Experience</p>
-</div>
+<div class="stat-card">
 
-<div class="card">
-<h3>Dr. Patel</h3>
-<p>Dermatologist</p>
-<p>⭐⭐⭐⭐⭐</p>
-<p>8 Years Experience</p>
-</div>
+<h1>5+</h1>
 
-<div class="card">
-<h3>Dr. Singh</h3>
-<p>Orthopedic</p>
-<p>⭐⭐⭐⭐⭐</p>
-<p>12 Years Experience</p>
-</div>
+<p>Partner Clinics</p>
 
 </div>
+
+<div class="stat-card">
+
+<h1>1+</h1>
+
+<p>Diagnostic Lab</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>24×7</h1>
+
+<p>Support</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>100%</h1>
+
+<p>Commitment</p>
+
+</div>
+
 </section>
-
-<section class="section" id="appointment">
-<h2 class="section-title">Book Appointment</h2>
-
-<form>
-<input type="text" placeholder="Full Name">
-
-<input type="number" placeholder="Age">
-
-<input type="tel" placeholder="Phone Number">
-
-<select>
-<option>Select Doctor</option>
-<option>Dr. Sharma</option>
-<option>Dr. Patel</option>
-<option>Dr. Singh</option>
-</select>
-
-<input type="date">
-
-<button>Submit</button>
-
-</form>
-</section>
-
-<section class="section" id="emergency">
-<h2 class="section-title">Emergency Services</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🚑 Ambulance</h3>
-<p>Dial 108</p>
-</div>
-
-<div class="card">
-<h3>🏥 Nearby Hospitals</h3>
-<p>Available 24×7</p>
-</div>
-
-<div class="card">
-<h3>📍 Ambulance Tracking</h3>
-<p>Coming Soon</p>
-</div>
-
-</div>
-</section>
-
-<section class="section" id="reviews">
-<h2 class="section-title">Patient Reviews</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Rahul Sharma</h3>
-<p>⭐⭐⭐⭐⭐</p>
-<p>Excellent service and easy appointment booking.</p>
-</div>
-
-<div class="card">
-<h3>Priya Patel</h3>
-<p>⭐⭐⭐⭐⭐</p>
-<p>Professional doctors and smooth experience.</p>
-</div>
-
-<div class="card">
-<h3>Amit Singh</h3>
-<p>⭐⭐⭐⭐⭐</p>
-<p>Very useful healthcare platform.</p>
-</div>
-
-</div>
-</section>
-
-<section class="section" id="contact">
-<h2 class="section-title">Contact Us</h2>
-
-<div class="card" style="margin:auto">
-
-<h3>📧 Email</h3>
-<p>olivexatechnologies@gmail.com</p>
-
-<br>
-
-<h3>📱 Phone</h3>
-<p>+91 8982497701</p>
-
-<br>
-
-<h3>📍 Address</h3>
-<p>Bhopal, Madhya Pradesh, India</p>
-
-</div>
-</section>
-
-<footer>
-<h3>© 2026 CareConnect</h3>
-<p>Powered by Olivexa Technologies</p>
-</footer>
 
 </body>
 </html>
