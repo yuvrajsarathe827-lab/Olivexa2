@@ -182,12 +182,22 @@ font-size:18px;
     box-shadow:0 20px 40px rgba(37,99,235,.35);
     border-color:#2563eb;
 }
+    #progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg,#2563eb,#60a5fa);
+    z-index: 9999;
+    transition: width .15s linear;
+    }
 </style>
 
 </head>
 
 <body>
-
+<div id="progress-bar"></div>
 <header>
 
 <div class="logo">
@@ -354,6 +364,17 @@ Address : Bhopal, Madhya Pradesh
 © 2026 CareConnect | Powered by Olivexa Technologies
 
 </footer>
+<script>
+window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
 
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress-bar").style.width = progress + "%";
+});
+</script>
 </body>
 </html>
