@@ -404,6 +404,48 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 counters.forEach(counter => observer.observe(counter));   
+ #topBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    display:none;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(37,99,235,.4);
+    transition:.3s;
+    z-index:9999;
+}
+
+#topBtn:hover{
+    transform:translateY(-5px) scale(1.1);
+    background:#1d4ed8;
+}   
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(document.documentElement.scrollTop > 300){
+        topBtn.style.display = "block";
+    }else{
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.onclick = function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+};    
 </script>
 </body>
 </html>
