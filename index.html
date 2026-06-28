@@ -253,22 +253,22 @@ Partner With Us
 <section class="stats">
 
 <div class="stat-card">
-<h1>50+</h1>
+<h1 class="counter" data-target="50">0</h1>
 <p>Doctors</p>
 </div>
 
 <div class="stat-card">
-<h1>20+</h1>
+<h1 class="counter" data-target="20">0</h1>
 <p>Hospitals</p>
 </div>
 
 <div class="stat-card">
-<h1>10+</h1>
+<h1 class="counter" data-target="10">0</h1>
 <p>Clinics</p>
 </div>
 
 <div class="stat-card">
-<h1>24/7</h1>
+<h1 class="counter" data-target="24">0</h1>
 <p>Support</p>
 </div>
 
@@ -375,6 +375,35 @@ window.addEventListener("scroll", () => {
 
     document.getElementById("progress-bar").style.width = progress + "%";
 });
+ const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const counter = entry.target;
+            const target = parseInt(counter.dataset.target);
+            let count = 0;
+
+            const updateCounter = () => {
+                const increment = Math.ceil(target / 50);
+
+                if (count < target) {
+                    count += increment;
+                    if (count > target) count = target;
+                    counter.textContent = count;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target + "+";
+                }
+            };
+
+            updateCounter();
+            observer.unobserve(counter);
+        }
+    });
+});
+
+counters.forEach(counter => observer.observe(counter));   
 </script>
 </body>
 </html>
